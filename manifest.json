@@ -1,0 +1,32 @@
+{
+  "name": "Software de Gestión Empresarial EnLinea\u00AE PWA",
+  "short_name": "EnLinea\u00AE PWA",
+  "lang": "es",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#0D47A1",
+  "background_color": "#0D47A1",
+  "icons": [
+    {
+        "src": "Images/logo512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    },
+    {
+        "src": "Images/logo512square.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    },
+    {
+        "src": "Images/logo.png",
+        "sizes": "89x94",
+        "type": "image/png"
+    },
+    {
+        "src": "Images/favicon.ico",
+        "sizes": "32x34",
+        "type": "image/x-icon"
+    }
+  ],
+  "orientation": "any"
+}

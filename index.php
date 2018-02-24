@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+App Shell EnLineaPWA
+By Jonathan Narvaez
 -->
 <html>
     <head>
         <meta charset="windows-1252">
-        <title></title>
+        <title>EnLinea&#174; PWA</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#0D47A1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="Images/favicon.ico" type="image/x-icon"/>
     </head>
     <body>
         <?php
-        // put your code here
+        echo '<p>Hola Mundo</p>';
         ?>
     </body>
 </html>
