@@ -14,7 +14,7 @@ $mensajeErrorAccion = $mensajeError404 . ' - La accion no existe';
 $mensajeErrorControlador = $mensajeError404 . ' - El controlador no existe';
 
 //La carpeta donde buscaremos los controladores
-$carpetaControladores = "Contoller/";
+$carpetaControladores = "Controller/";
 
 //Si no se indica un controlador , este es el controlador que se usara
 $controladorPredefinido ="inicio";
@@ -25,9 +25,11 @@ $accionPredefinida = "Esqueleto";
 
 
 //Se recupera por el metodo GET el controlador
-if(! empty( filter_input(INPUT_GET , controlador) ))
+
+
+if(! empty( filter_input(INPUT_GET , 'controlador') ))
 {
-    $controlador = filter_input(INPUT_GET , controlador);
+    $controlador = filter_input(INPUT_GET , 'controlador');
 }
 else
 {
@@ -39,9 +41,10 @@ $baseAccion = $controlador;
 
 
 //Se recupera por el metodo GET la accion
-if(! empty(filter_input(INPUT_GET , accion)))
+
+if(! empty(filter_input(INPUT_GET , 'accion')))
 {
-    $accion = filter_input(INPUT_GET , accion);
+    $accion = filter_input(INPUT_GET , 'accion');
 }
 else
 {
@@ -60,7 +63,7 @@ if (is_file($controlador))
 }
 else
 {
-    die ($mensajeErrorControlador );
+    die ($mensajeErrorControlador . ' ' . $controlador );
 }
 
 //Llamamos la accion o detenemos todo si no existe
@@ -72,7 +75,7 @@ if(is_callable($accion))
 }
 else
 {
-    die ($mensajeErrorAccion);
+    die ($mensajeErrorAccion . ' ' . $accion);
 }
 
 ?>
