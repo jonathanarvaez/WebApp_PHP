@@ -22,11 +22,7 @@ $controladorPredefinido ="inicio";
 //Si no se indica una accion, esta accion es la que se usara
 $accionPredefinida = "Esqueleto";
 
-
-
 //Se recupera por el metodo GET el controlador
-
-
 if(! empty( filter_input(INPUT_GET , 'controlador') ))
 {
     $controlador = filter_input(INPUT_GET , 'controlador');
@@ -39,9 +35,7 @@ else
 //Se asigna $baseAccion
 $baseAccion = $controlador;
 
-
 //Se recupera por el metodo GET la accion
-
 if(! empty(filter_input(INPUT_GET , 'accion')))
 {
     $accion = filter_input(INPUT_GET , 'accion');
@@ -52,7 +46,6 @@ else
 }
 
 //Ya tenemos el controlador y la accion
-
 //Formamos el nombre del fichero que contiene nuestro controlador
 $controlador =$carpetaControladores . 'control' . $controlador . '.php';
 

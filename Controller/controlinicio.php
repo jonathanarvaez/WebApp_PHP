@@ -10,7 +10,9 @@ include_once './View/funcView.php';
 function inicioEsqueleto()
 {
     inicio();
-    head();
-    body();
+    barraTop();
+    cuerpoInicio();
+    menuPrincipal();
+    cuerpoFin();
     fin();
 }
