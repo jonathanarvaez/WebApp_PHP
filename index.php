@@ -3,37 +3,77 @@
 App Shell EnLineaPWA
 By Jonathan Narvaez
 -->
-<html>
-    <head>
-        <meta charset="windows-1252">
-        <title>EnLinea&#174; PWA</title>
-        <link rel="manifest" href="manifest.json">
-        <meta name="theme-color" content="#0D47A1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="Images/favicon.ico" type="image/x-icon"/>
-         <!-- Hojas de Estilo (BEGIN) -->
-        <link href="StyleSkin/fontawesome.css" rel="stylesheet" />
-        <link href="StyleSkin/StyleSkin.css" rel="stylesheet" type="text/css" />
+<?php 
+
+//Primero algunas variables de configuracion
+//requiere 'conexion.php';
+
+//Definimos los mensajes de error.
+$mensajeError404 = '404 Page not found';
+$mensajeErrorAccion = $mensajeError404 . ' - La accion no existe';
+$mensajeErrorControlador = $mensajeError404 . ' - El controlador no existe';
+
+//La carpeta donde buscaremos los controladores
+$carpetaControladores = "Contoller/";
+
+//Si no se indica un controlador , este es el controlador que se usara
+$controladorPredefinido ="inicio";
+
+//Si no se indica una accion, esta accion es la que se usara
+$accionPredefinida = "Esqueleto";
+
+
+
+//Se recupera por el metodo GET el controlador
+if(! empty( filter_input(INPUT_GET , controlador) ))
+{
+    $controlador = filter_input(INPUT_GET , controlador);
+}
+else
+{
+    $controlador = $controladorPredefinido;
+}
+
+//Se asigna $baseAccion
+$baseAccion = $controlador;
+
+
+//Se recupera por el metodo GET la accion
+if(! empty(filter_input(INPUT_GET , accion)))
+{
+    $accion = filter_input(INPUT_GET , accion);
+}
+else
+{
+    $accion = $accionPredefinida;
+}
+
+//Ya tenemos el controlador y la accion
+
+//Formamos el nombre del fichero que contiene nuestro controlador
+$controlador =$carpetaControladores . 'control' . $controlador . '.php';
+
+//Incluimos el controlador o detenemos todo si no existe
+if (is_file($controlador))
+{
+    require_once $controlador;
+}
+else
+{
+    die ($mensajeErrorControlador );
+}
+
+//Llamamos la accion o detenemos todo si no existe
+$accion = $baseAccion.$accion;
+
+if(is_callable($accion))
+{
+    $accion();
+}
+else
+{
+    die ($mensajeErrorAccion);
+}
+
+?>
     
-        <!-- Hoja de Estilo (END) -->
-    </head>
-    <body>
-    <?php echo
-       '<!-- BARRA SUPERIOR (BEGIN) -->
-	<div id="N0BarraTop" class="barraTop-Div">
-            <table id="N0BarraTop-Tabla" class="barraTop-Table">
-                <tr>
-                    <td class="barraTop-Table-Menu-s barraTop-Table-Menu-m barraTop-Table-Menu-f" > <i class="fa fa-bars"></i> </td>
-                    <td class="barraTop-Table-Menu-s barraTop-Table-Menu-m barraTop-Table-Menu-f" title="Software de Gestion Empresarial"> <img src="Images/logo.png" alt="logo" class="barraTop-logo-s barraTop-logo-m barraTop-logo-f"> </td>
-                    <td class="barraTop-Table-Titulo-s barraTop-Table-Titulo-m barraTop-Table-Titulo-f">Consulta de pacientes</td>
-                    <th class="barraTop-Table-Espaciador-s barraTop-Table-Espaciador-m barraTop-Table-Espaciador-f"></th>
-                    <td class="barraTop-Table-Boton-s barraTop-Table-Boton-m barraTop-Table-Boton-f" title="Cargando..."> <i class="fa fa-spinner fa-pulse fa-3x fa-fw ico-cargando-s ico-cargando-m ico-cargando-f" aria-hidden="true"></i> </td>
-                    <td class="barraTop-Table-Boton-s barraTop-Table-Boton-m barraTop-Table-Boton-f" title="Mensajes" > <i class="fa fa-bell" aria-hidden="true"></i> </td>
-                    <td class="barraTop-Table-Boton-s barraTop-Table-Boton-m barraTop-Table-Boton-f" title="Usuario" > <i class="fa fa-user" aria-hidden="true"></i> </td>
-                </tr>
-            </table>
-	</div>
-	<!-- BARRA SUPERIOR (END) -->';
-    ?>
-    </body>
-</html>
