@@ -16,11 +16,13 @@ function inicio()
             <meta name="theme-color" content="#0D47A1">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" href="Images/favicon.ico" type="image/x-icon"/>
-             <!-- Hojas de Estilo (BEGIN) -->
-            <link href="StyleSkin/fontawesome.css" rel="stylesheet" />
-            <link href="StyleSkin/StyleSkin.css" rel="stylesheet" type="text/css" />
-
+            <!-- Hojas de Estilo (BEGIN) -->
+                <link href="StyleSkin/fontawesome.css" rel="stylesheet" />
+                <link href="StyleSkin/StyleSkin.css" rel="stylesheet" type="text/css" />
             <!-- Hoja de Estilo (END) -->
+            <!-- Scripts (BEGIN) -->
+                <script src="Core/jsEventosClic.js" type="text/javascript"></script>
+            <!-- Scripts (END) -->
         </head>
         <body>';
 }
@@ -33,12 +35,12 @@ function barraTop()
     <div id="N0BarraTop" class="barraTop-Div">
         <table id="N0BarraTop-Tabla" class="barraTop-Table">
             <tr>
-                <td class="barraTop-Table-Menu-s barraTop-Table-Menu-m barraTop-Table-Menu-f" > <i class="fa fa-bars"></i> </td>
+                <td class="barraTop-Table-Menu-s barraTop-Table-Menu-m barraTop-Table-Menu-f" onClick="eventosWebEstatica.prototype.BotonClicEfecto(1,\'N0Menu\', \'N0Auxiliar\',\'N0Contenido\')"> <i class="fa fa-bars"></i> </td>
                 <td class="barraTop-Table-Menu-s barraTop-Table-Menu-m barraTop-Table-Menu-f" title="Software de Gestion Empresarial"> <img src="Images/logo.png" alt="logo" class="barraTop-logo-s barraTop-logo-m barraTop-logo-f"> </td>
                 <td class="barraTop-Table-Titulo-s barraTop-Table-Titulo-m barraTop-Table-Titulo-f">Consulta de pacientes</td>
                 <th class="barraTop-Table-Espaciador-s barraTop-Table-Espaciador-m barraTop-Table-Espaciador-f"></th>
                 <td class="barraTop-Table-Boton-s barraTop-Table-Boton-m barraTop-Table-Boton-f" title="Cargando..."> <i class="fa fa-spinner fa-pulse fa-3x fa-fw ico-cargando-s ico-cargando-m ico-cargando-f" aria-hidden="true"></i> </td>
-                <td class="barraTop-Table-Boton-s barraTop-Table-Boton-m barraTop-Table-Boton-f" title="Mensajes" > <i class="fa fa-bell" aria-hidden="true"></i> </td>
+                <td class="barraTop-Table-Boton-s barraTop-Table-Boton-m barraTop-Table-Boton-f" title="Mensajes" onClick="eventosWebEstatica.prototype.BotonClicEfecto(2,\'N0Menu\', \'N0Auxiliar\',\'N0Contenido\')" > <i class="fa fa-bell" aria-hidden="true"></i> </td>
                 <td class="barraTop-Table-Boton-s barraTop-Table-Boton-m barraTop-Table-Boton-f" title="Usuario" > <i class="fa fa-user" aria-hidden="true"></i> </td>
             </tr>
         </table>
@@ -136,10 +138,55 @@ function areaAuxiliar()
 {
     echo 
    '<!-- AREA DE NOTIFICACIONES Y MENSAJES (BEGIN) -->
-    <div id="N0Notas" class="col-3 col-m-12 cuerpo-Notas-s cuerpo-Notas-m cuerpo-Notas-f">';
+    <div id="N0Auxiliar" class="col-3 col-m-12 cuerpo-Auxiliar-s cuerpo-Auxiliar-m cuerpo-Auxiliar-f cuerpoAuxiliar" >
+     <table class="cuerpoAuxiliar-Tabla">
+     <tr><td> <div class="aside">
+                        <h2>What?</h2>
+                        <p>Chania is a city on the island of Crete.</p>
+                        <h2>Where?</h2>
+                        <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                        <h2>How?</h2>
+                        <p>You can reach Chania airport from all over Europe.</p>
+                    </div></td></tr><tr><td> <div class="aside">
+                        <h2>What?</h2>
+                        <p>Chania is a city on the island of Crete.</p>
+                        <h2>Where?</h2>
+                        <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                        <h2>How?</h2>
+                        <p>You can reach Chania airport from all over Europe.</p>
+                    </div></td></tr><tr><td> <div class="aside">
+                        <h2>What?</h2>
+                        <p>Chania is a city on the island of Crete.</p>
+                        <h2>Where?</h2>
+                        <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                        <h2>How?</h2>
+                        <p>You can reach Chania airport from all over Europe.</p>
+                    </div></td></tr><tr><td> <div class="aside">
+                        <h2>What?</h2>
+                        <p>Chania is a city on the island of Crete.</p>
+                        <h2>Where?</h2>
+                        <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                        <h2>How?</h2>
+                        <p>You can reach Chania airport from all over Europe.</p>
+                    </div></td></tr><tr><td> <div class="aside">
+                        <h2>What?</h2>
+                        <p>Chania is a city on the island of Crete.</p>
+                        <h2>Where?</h2>
+                        <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                        <h2>How?</h2>
+                        <p>You can reach Chania airport from all over Europe.</p>
+                    </div></td></tr><tr><td> <div class="aside">
+                        <h2>What?</h2>
+                        <p>Chania is a city on the island of Crete.</p>
+                        <h2>Where?</h2>
+                        <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                        <h2>How?</h2>
+                        <p>You can reach Chania airport from all over Europe.</p>
+                    </div></td></tr>';
     
     echo 
-   '</div> 
+   '    </table>
+       </div> 
     <!-- AREA DE NOTIFICACIONES Y MENSAJES (END) -->';
 }
 
