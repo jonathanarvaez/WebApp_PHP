@@ -1,4 +1,9 @@
 <?php
+include_once 'funcMenu.php';
+
+
+//esta funcion incluye los metodos para construccion basica de la web
+
 
 function inicio()
 {
@@ -60,72 +65,92 @@ function cuerpoFin(){
 
 function menuPrincipal()
 {
-    $titulo01 = 'Consulta Datos del Paciente ';
-    $titulo02 = 'Consulta Datos del Paciente';
-    $titulo03 = '';
-
-    $contenido01 = '<ul>
-                        <li title="Consultar" class="botonMenu02"><a href="/Download/Certificado.pdf" target="_blank" >Consultar</a></li>
-                        <li title="Comprobador" class="botonMenu02">Comprobador</li>
-                        <li title="Paciente-Consumos" class="botonMenu02">Paciente-Consumos</li>
-                        <li title="Bodega de Datos" class="botonMenu02">Bodega de Datos</li>
-                        <li title="Lista de Atencion" class="botonMenu02">Lista de Atencion</li>
-                    </ul>';
-    $contenido02 = '<p>Datos de Pacientes01</p>
-                    <p>Datos de Pacientes02</p>
-                    <p>Datos de Pacientes03</p>';
-    $contenido03 = '<ul>
-                        <li title="Configuración" class="botonMenu01">Configuración</li>
-                        <li title="Cuentas por Cobrar" class="botonMenu01">CxC</li>
-                        <li title="Ejecución" class="botonMenu01">Ejecución</li>
-                        <li title="Compras" class="botonMenu01">Compras</li>
-                        <li title="Inventarios" class="botonMenu01">Inventarios</li>
-                    </ul>';
-    echo '
-        <!-- MENU PRINCIPAL (BEGIN) -->
+    echo 
+       '<!-- MENU PRINCIPAL (BEGIN) -->
         <div id="N0Menu" class="col-3 col-m-3 menu menuPrincipal-s menuPrincipal-m menuPrincipal-f">
             <table class="menuPrincipal-Tabla">
-    ';
+                <tr>
+                    <td>
+                        <div class="menuPrincipal-Tabla-Titulo">
+                            ';
+                            menuPTitulo01();
     echo 
-    '           <tr>
-                    <td>
-                        <div class="menuPrincipal-Tabla-Titulo">
-                            '.$titulo01.'
-                       </div>
+                       '</div>
                         <div class="menuPrincipal-Tabla-OpcVariables">
-                            '.$contenido01.'
-                        </div>
+                            ';
+                            menuPContenido01();
+    echo               
+                       '</div>
                     </td>
-                </tr>';
-    echo
-    '           <tr>
+                </tr>
+                <tr>
                     <td>
                         <div class="menuPrincipal-Tabla-Titulo">
-                            '.$titulo02.'
-                        </div>
+                            ';
+                            menuPTitulo02();
+    echo               
+                       '</div>
                         <div class="menuPrincipal-Tabla-OpcFijas">
-                            '.$contenido02.'
-                        </div>
+                            ';
+                            menuPContenido02();
+    echo               
+                       '</div>
                     </td>
-                </tr>';
-    echo
-    '           <tr>
+                </tr>
+                <tr>
                     <td></td>
                 </tr>
                 <tr>
                     <td>
                         <div class="menuPrincipal-Tabla-Titulo">
-                            '.$titulo03.'
-                        </div>
+                            ';
+                            menuPTitulo03();
+    echo               
+                       '</div>
                         <div class="menuPrincipal-Tabla-Sistemas">
-                            '.$contenido03.'
-                        </div>
+                            ';
+                            menuPContenido03();
+    echo               
+                       '</div>
                     </td>
-                </tr>';
-    echo
-    '       </table>
+                </tr>
+            </table>
         </div>
         <!-- MENU PRINCIPAL (END) -->';
+}
+
+
+function areaContenido()
+{
+    echo 
+   '<!-- ZONA DE CONTENIDO DE LA WEB (BEGIN) -->
+    <div id="N0Contenido" class="col-6 col-m-9 cuerpo-Contenido">';
+    
+    echo 
+   '</div>
+    <!-- ZONA DE CONTENIDO DE LA WEB (END) -->';
+    
+}
+
+function areaAuxiliar()
+{
+    echo 
+   '<!-- AREA DE NOTIFICACIONES Y MENSAJES (BEGIN) -->
+    <div id="N0Notas" class="col-3 col-m-12 cuerpo-Notas-s cuerpo-Notas-m cuerpo-Notas-f">';
+    
+    echo 
+   '</div> 
+    <!-- AREA DE NOTIFICACIONES Y MENSAJES (END) -->';
+}
+
+function barraBottom()
+{
+    echo 
+   '<!-- BARRA INFERIOR DE LA WEB (BEGIN) -->
+    <div class="barraBottom-Div">
+        <p>Softgem</p>
+    </div>
+    <!-- BARRA INFERIOR DE LA WEB (END) -->';
 }
 
 function fin()

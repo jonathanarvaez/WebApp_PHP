@@ -12,7 +12,10 @@ function inicioEsqueleto()
     inicio();
     barraTop();
     cuerpoInicio();
-    menuPrincipal();
+        menuPrincipal();
+        areaContenido();
+        areaAuxiliar();
     cuerpoFin();
+    barraBottom();
     fin();
 }
