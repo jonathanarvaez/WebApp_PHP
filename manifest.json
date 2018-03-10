@@ -8,23 +8,28 @@
   "background_color": "#0D47A1",
   "icons": [
     {
-        "src": "Images/logo512.png",
+        "src": "Images/IconosEnLinea/ICO/EnLinea_C_ICO_512.ico",
+        "sizes": "512x512",
+        "type": "image/x-icon"
+    },
+    {
+        "src": "Images/IconosEnLinea/PNG/EnLinea_C_PNG_512.png",
         "sizes": "512x512",
         "type": "image/png"
     },
     {
-        "src": "Images/logo512square.png",
+        "src": "Images/IconosEnLinea/PNG/EnLinea_S_PNG_512.png",
         "sizes": "512x512",
         "type": "image/png"
     },
     {
-        "src": "Images/logo.png",
-        "sizes": "89x94",
-        "type": "image/png"
+        "src": "Images/IconosEnLinea/ICO/EnLinea_S_ICO_512.ico",
+        "sizes": "512x512",
+        "type": "image/x-icon"
     },
     {
-        "src": "Images/favicon.ico",
-        "sizes": "32x34",
+        "src": "Images/IconosEnLinea/ICO/favicon.ico",
+        "sizes": "512x512",
         "type": "image/x-icon"
     }
   ],
