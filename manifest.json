@@ -13,6 +13,11 @@
         "type": "image/x-icon"
     },
     {
+        "src": "Images/IconosEnLinea/ICO/EnLinea_C_ICO_96.ico",
+        "sizes": "96x96",
+        "type": "image/x-icon"
+    },
+    {
         "src": "Images/IconosEnLinea/PNG/EnLinea_C_PNG_512.png",
         "sizes": "512x512",
         "type": "image/png"
